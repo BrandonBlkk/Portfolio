@@ -214,7 +214,7 @@ header nav #hamitems {
 
 .scroll-up {
     position: sticky;
-    top: 43em;
+    top: 42em;
     float: right;
     display: flex;
     justify-content: center;
