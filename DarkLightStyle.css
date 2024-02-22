@@ -365,7 +365,7 @@ header nav #hamitems {
     padding: 10px;
     text-decoration: none;
 }
-.wrapper:hover .project-btn h2 {
+.wrapper:hover .project-btn a {
     bottom: 8em;
 }
 .wrapper:hover .wrapper-img img,
@@ -396,14 +396,18 @@ header nav #hamitems {
     justify-content: center;
     align-items: center;
 }
-.project-btn h2 {
+.project-btn a {
     font-size: 1.3em;
+    font-weight: 600;
+    text-decoration: none;
     position: absolute;
     bottom: -7em;
+    color: white;
     background-color: rgb(230, 60, 60);
     padding: 10px;
     border-radius: 10px;
     transition: 0.4s;
+    user-select: none;
 }
 
 /* Contact */
@@ -594,4 +598,3 @@ footer #twitter {
         width: 15em;
     }
 }
-
