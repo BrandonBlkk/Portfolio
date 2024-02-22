@@ -64,6 +64,8 @@ header nav #hamitems {
     gap: 20px;
 }
 #hamitems .nav-links {
+    display: flex;
+    justify-content: center;
     padding: 20px;
     font-size: large;
     list-style-type: none;
@@ -214,7 +216,7 @@ header nav #hamitems {
 
 .scroll-up {
     position: sticky;
-    top: 42em;
+    top: 43em;
     float: right;
     display: flex;
     justify-content: center;
@@ -351,10 +353,11 @@ header nav #hamitems {
     justify-content: center;
     gap: 10px;
 }
-.main-wrapper img:hover {
-    transform: translateY(-3px);
+.box {
+    overflow: hidden;
 }
 .wrapper {
+    position: relative;
     width: 350px;
     height: 350px;
     background-color: rgb(17, 17, 17);
@@ -362,23 +365,45 @@ header nav #hamitems {
     padding: 10px;
     text-decoration: none;
 }
+.wrapper:hover .project-btn h2 {
+    bottom: 8em;
+}
+.wrapper:hover .wrapper-img img,
+.wrapper:hover .wrapper-text {
+    filter: blur(2px);
+}
 .wrapper-img img{
     width: 330px;
     height: 200px;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 .wrapper-text {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     gap: 20px;
+    transition: 0.4s;
 }
 .wrapper-text h3 {
     color: white;
 }
 .wrapper-text p {
     text-indent: 20px;
+}
+.project-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project-btn h2 {
+    font-size: 1.3em;
+    position: absolute;
+    bottom: -7em;
+    background-color: rgb(230, 60, 60);
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.4s;
 }
 
 /* Contact */
@@ -474,8 +499,8 @@ footer #twitter {
     #hamitems {
         flex-direction: column;
         position: fixed;
-        top: -100%; 
-        left: 0;
+        top: 60px; 
+        left: -50em;
         width: 100%;
         background: rgb(11, 11, 11);
         border-radius: 0px 0px 10px 10px;
@@ -485,11 +510,14 @@ footer #twitter {
         transform: rotate(180deg);
     }
     .nav input:checked ~ #hamitems {
-        top: 55px;
+        left: 0;
         transition: 0.4s;
     }
     .nav-links:not(:last-child) {
-        border-bottom: 1px solid rgb(68, 68, 68);
+        border-bottom: 1px solid rgb(31, 31, 31);
+    }
+    .nav-links {
+        width: 90%;
     }
     .button {
         justify-content: center;
