@@ -52,6 +52,7 @@ function allProject () {
     const project2 = document.getElementById("project2");
     const project3 = document.getElementById("project3");
     const project4 = document.getElementById("project4");
+    const project5 = document.getElementById("project5");
     const all = document.getElementById("all");
     const design = document.getElementById("design");
     const dev = document.getElementById("dev");
@@ -60,6 +61,7 @@ function allProject () {
     project2.style.display = "block";
     project3.style.display = "block";
     project4.style.display = "block";
+    project5.style.display = "block";
     all.style.backgroundColor = "rgb(15 23 42)";
     all.style.color = "white";
     design.style.backgroundColor = "white";
@@ -73,6 +75,7 @@ function design () {
     const project2 = document.getElementById("project2");
     const project3 = document.getElementById("project3");
     const project4 = document.getElementById("project4");
+    const project5 = document.getElementById("project5");
     const all = document.getElementById("all");
     const design = document.getElementById("design");
     const dev = document.getElementById("dev");
@@ -81,6 +84,7 @@ function design () {
     project2.style.display = "none";
     project3.style.display = "block";
     project4.style.display = "block";
+    project5.style.display = "block";
     all.style.backgroundColor = "white";
     all.style.color = "black";
     design.style.backgroundColor = "rgb(15 23 42)";
@@ -94,6 +98,7 @@ function development () {
     const project2 = document.getElementById("project2");
     const project3 = document.getElementById("project3");
     const project4 = document.getElementById("project4");
+    const project5 = document.getElementById("project5");
     const all = document.getElementById("all");
     const design = document.getElementById("design");
     const dev = document.getElementById("dev");
@@ -102,6 +107,7 @@ function development () {
     project2.style.display = "block";
     project3.style.display = "none";
     project4.style.display = "none";
+    project5.style.display = "none";
     all.style.backgroundColor = "white";
     all.style.color = "black";
     design.style.backgroundColor = "white";
