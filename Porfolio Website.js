@@ -23,30 +23,45 @@ function toggleDarkMode() {
     // Toggle dark mode class on the body
     document.body.classList.toggle('dark-mode');
     
-    // Get the button element
+    // Get the button element\
+    const icon = document.getElementById('darkModeToggle');
     const startProjectBtn = document.getElementById('startProjectBtn');
     const moveRightLoader = document.getElementById('moveRightLoader');
-    const wrokBtn1 = document.getElementById('wrokBtn1');
+    const workBtn = document.getElementById('workBtn');
     const all = document.getElementById("all");
+    const design = document.getElementById("design");
+    const dev = document.getElementById("dev");
 
     // Check if dark mode is active
     const isDarkMode = document.body.classList.contains('dark-mode');
 
     // Update button background color based on dark mode state
     if (isDarkMode) {
-        startProjectBtn.style.backgroundColor = '#ffffff';
-        startProjectBtn.style.color = '#000000'; 
+        icon.style.transform = 'rotate(360deg)';
+        startProjectBtn.style.backgroundColor = '#ffffff'; // White background color
+        startProjectBtn.style.color = '#000000'; // Black text color
         moveRightLoader.style.backgroundColor = 'rgb(15 23 42)';
-        wrokBtn1.style.backgroundColor = 'white';
-        wrokBtn1.style.color = 'black';
+        workBtn.style.backgroundColor = 'white';
+        workBtn.style.color = 'black';
         all.style.backgroundColor = 'white';
         all.style.color = 'black';
+        design.style.backgroundColor = 'rgb(15 23 42)';
+        design.style.color = 'white';
+        dev.style.backgroundColor = 'rgb(15 23 42)';
+        dev.style.color = 'white';
     } else {
-        startProjectBtn.style.backgroundColor = '#1f2937'; 
-        startProjectBtn.style.color = '#ffffff';
+        icon.style.transform = 'rotate(180deg)';
+        startProjectBtn.style.backgroundColor = '#1f2937'; // Original dark mode background color
+        startProjectBtn.style.color = '#ffffff'; // Original dark mode text color
         moveRightLoader.style.backgroundColor = 'rgb(243 244 246)';
-        wrokBtn1.style.backgroundColor = 'rgb(15 23 42)';
-        wrokBtn1.style.color = 'white';
+        workBtn.style.backgroundColor = 'rgb(15 23 42)';
+        workBtn.style.color = 'white';
+        all.style.backgroundColor = 'rgb(15 23 42)';
+        all.style.color = 'white';
+        design.style.backgroundColor = 'white';
+        design.style.color = 'black';
+        dev.style.backgroundColor = 'white';
+        dev.style.color = 'black';
     }
 }
 
@@ -69,15 +84,20 @@ lis.forEach(li => {
 function handleScroll() {
     // Check if the scroll position is greater than 0
     if (window.scrollY > 0) {
+        // Add a CSS class to fix the position of the menu  
         menu.classList.add('fixed', 'top-5', 'right-10', 'z-50', 'shadow-md');
         // Check if dark mode is enabled
         if (document.body.classList.contains('dark-mode')) {
+            // If dark mode is enabled, set the background color to rgb(15, 23, 42)
             menu.style.backgroundColor = 'rgb(15, 23, 42)';
         } else {
+            // If dark mode is not enabled, set the background color to white
             menu.style.backgroundColor = 'white';
         }
     } else {
+        // Remove the CSS class to restore the default position of the menu
         menu.classList.remove('fixed', 'top-0', 'z-50', 'shadow-md');
+        // Reset the background color to its default value
         menu.style.backgroundColor = 'transparent';
     }
 }
