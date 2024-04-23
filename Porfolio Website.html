@@ -11,6 +11,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <div id="moveRightLoader" class="fixed top-0 bg-gray-100 w-full h-1 z-10">
+        <p id="move-right" class="absolute top-0 bg-blue-400 h-1"></p>
+    </div> 
     <nav class="flex flex-col md:flex-row items-center gap-4 container mx-auto px-10 my-10">
         <div class="w-40">
             <img class="w-full h-full object-contain rounded-full select-none" src="Image/MicrosoftTeams-image (23).png" alt="Image">
@@ -18,19 +21,20 @@
         <div>
             <div class="flex gap-2">
                 <p class="text-slate-500"><span><i class="ri-at-line text-slate-500"></i></span> Kyaw Zayar Tun</p>
-            <p class="text-slate-500"><span><i class="ri-calendar-2-line text-slate-500"></i></span> 19y/o</p>
+                <p class="text-slate-500"><span><i class="ri-calendar-2-line text-slate-500"></i></span> 19y/o</p>
             </div>
             <p class="text-slate-500"><span><i class="ri-map-pin-user-fill text-slate-500"></i></span> Yangon</p>
         </div>
+        <i id="darkModeToggle" class="fa-solid fa-moon text-xl ml-2" onclick="toggleDarkMode()"></i>
 
         <ul id="menu" class="flex border rounded-full md:ml-auto">
-            <li class="li px-6 py-4 border rounded-full select-none transition-all duration-200"><a href="#">About</a></li>
-            <li class="li px-6 py-4 select-none transition-all duration-500"><a href="#work">Work</a></li>
-            <li class="li px-6 py-4 select-none transition-all duration-500"><a href="#solution">Solutions</a></li>
-        </ul>        
+            <a href="#" class="li px-6 py-4 border rounded-full select-none transition-all duration-200">About</a>
+            <a href="#work" class="li px-6 py-4 select-none transition-all duration-500">Work</a>
+            <a href="#solution" class="li px-6 py-4 select-none transition-all duration-500">Solutions</a>
+        </ul>     
     </nav>
 
-    <header class="container mx-auto">
+    <header class="container mx-auto relative">
         <div class="mx-5">
             <h2 class="text-4xl sm:text-5xl">
                 Hi, I'm Brandon <span class="skills text-blue-400">Frontend Developer</span>
@@ -40,10 +44,10 @@
             </h4>
 
             <div class="flex gap-3">
-                <a class="bg-slate-900 text-white px-6 py-3 rounded-full hover:bg-slate-800 transition-colors duration-150 select-none" href="#hitme">Start a Project</a>
+                <a id="startProjectBtn" class="bg-slate-900 text-white px-6 py-3 rounded-full hover:bg-slate-800 transition-colors duration-150 select-none" href="#hitme">Start a Project</a>
                 <a class="bg-sky-500 text-white px-4 py-3 rounded-full hover:bg-slate-800 transition-colors duration-150" href="#"><i class="ri-arrow-right-up-line"></i></a>
             </div>
-        </div>
+        </div>  
     </header>
 
     <section class="container mx-auto my-12">
@@ -82,19 +86,19 @@
         </div>
         <div class="flex flex-col gap-10 justify-between mx-5 my-3 sm:flex-row">
             <div class="flex flex-wrap gap-3">
-                <p id="all" class="flex items-center justify-centerborder border px-5 py-4 rounded-full select-none bg-slate-900 text-white cursor-pointer" onclick="allProject()">All</p>
+                <p id="all" class="flex items-center justify-centerborde border px-5 py-4 rounded-full select-none bg-slate-900 text-white cursor-pointer" onclick="allProject()">All</p>
                 <p id="design" class="flex items-center justify-centerborder border px-5 py-4 rounded-full select-none cursor-pointer transition-colors duration-150" onclick="design()">Design</p>
                 <p id="dev" class="flex items-center justify-centerborder border px-5 py-4 rounded-full select-none cursor-pointer transition-colors duration-150" onclick="development()">Development</p>
             </div>
             <div class="space-x-2 select-none">
-                <i class="ri-apps-2-line p-5 rounded-full select-none cursor-pointer bg-slate-900 text-white transition-colors duration-150"></i>
+                <i id="wrokBtn1" class="ri-apps-2-line p-5 rounded-full select-none cursor-pointer bg-slate-900 text-white transition-colors duration-150"></i>
                 <i class="ri-menu-3-fill border p-5 rounded-full select-none cursor-pointer"></i>
-            </div>            
+            </div>           
         </div>
         <div class="flex flex-wrap justify-center py-3">
             <div id="project1" class="hot-deal-box w-full mx-5 relative border-b-2 md:border-b-0 sm:w-80">
                 <a href="https://brandonblkk.github.io/Retail-Camping/Basket.html" target="_blank"><i class="ri-code-line text-2xl absolute top-1 right-1 text-orange-400 select-none cursor-pointer hover:scale-105 transition-transform transform-gpu duration-150"></i></a>
-                <div class="hot-deal-img-container flex justify-center bg-white rounded-xl select-none">
+                <div class="hot-deal-img-container flex justify-center rounded-xl select-none">
                     <div class="img h-52">
                         <img class="w-full h-full object-contain " src="Image/Screenshot 2024-04-21 005125.png" alt="Image">
                     </div>
@@ -118,7 +122,7 @@
 
             <div id="project2" class="hot-deal-box w-full mx-5 relative border-b-2 md:border-b-0 sm:w-80">
                 <a href="https://github.com/BrandonBlkk/SMC-Social-Media-Campaigns-" target="_blank"><i class="ri-code-line text-2xl absolute top-1 right-1 text-orange-400 select-none cursor-pointer hover:scale-105 transition-transform transform-gpu duration-150"></i></a>
-                <div class="hot-deal-img-container flex justify-center bg-white rounded-xl select-none">
+                <div class="hot-deal-img-container flex justify-center rounded-xl select-none">
                     <div class="img h-52">
                         <img class="w-full h-full object-contain " src="Image/Screenshot 2024-03-24 020735.png" alt="Image">
                     </div>
@@ -144,7 +148,7 @@
 
             <div id="project3" class="hot-deal-box w-full mx-5 relative border-b-2 md:border-b-0 sm:w-80">
                 <a href="https://brandonblkk.github.io/Amberhill-Cafe/CoffeeWebsite.html" target="_blank"><i class="ri-code-line text-2xl absolute top-1 right-1 text-orange-400 select-none cursor-pointer hover:scale-105 transition-transform transform-gpu duration-150"></i></a>
-                <div class="hot-deal-img-container flex justify-center bg-white rounded-xl select-none">
+                <div class="hot-deal-img-container flex justify-center rounded-xl select-none">
                     <div class="img h-52">
                         <img class="w-full h-full object-contain " src="Image/Screenshot 2024-04-23 001346.png" alt="Image">
                     </div>
@@ -168,7 +172,7 @@
 
             <div id="project4" class="hot-deal-box w-full mx-5 relative border-b-2 md:border-b-0 sm:w-80">
                 <a href="https://brandonblkk.github.io/Spotify-Clone/SpotifyClone.html" target="_blank"><i class="ri-code-line text-2xl absolute top-1 right-1 text-orange-400 select-none cursor-pointer hover:scale-105 transition-transform transform-gpu duration-150"></i></a>
-                <div class="hot-deal-img-container flex justify-center bg-white rounded-xl select-none">
+                <div class="hot-deal-img-container flex justify-center rounded-xl select-none">
                     <div class="img h-52">
                         <img class="w-full h-full object-contain " src="Image/Screenshot 2024-04-21 180753.png" alt="Image">
                     </div>
@@ -192,7 +196,7 @@
 
             <div id="project5" class="hot-deal-box w-full mx-5 relative border-b-2 md:border-b-0 sm:w-80">
                 <a href="https://brandonblkk.github.io/Shopping-Website/TailwindCSS.html" target="_blank"><i class="ri-code-line text-2xl absolute top-1 right-1 text-orange-400 select-none cursor-pointer hover:scale-105 transition-transform transform-gpu duration-150"></i></a>
-                <div class="hot-deal-img-container flex justify-center bg-white rounded-xl select-none">
+                <div class="hot-deal-img-container flex justify-center rounded-xl select-none">
                     <div class="img h-52">
                         <img class="w-full h-full object-contain " src="Image/Screenshot 2024-04-21 011401.png" alt="Image">
                     </div>
