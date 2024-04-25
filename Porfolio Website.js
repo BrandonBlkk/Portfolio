@@ -2,7 +2,7 @@ let moveRight = document.getElementById("move-right");
 
 window.addEventListener('scroll', function() {
     let scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-    let scrollPercentage = (window.scrollY / scrollableHeight) * 100;
+    let scrollPercentage = (window.scrollY / scrollableHeight) * 100; 
 
     if (scrollPercentage >= 100) {
         moveRight.style.width = '100%';
@@ -23,17 +23,17 @@ function toggleDarkMode() {
     // Toggle dark mode class on the body
     document.body.classList.toggle('dark-mode');
     
-    // Get the button element\
-    const icon = document.getElementById('darkModeToggle');
-    const startProjectBtn = document.getElementById('startProjectBtn');
-    const moveRightLoader = document.getElementById('moveRightLoader');
-    const workBtn = document.getElementById('workBtn');
-    const all = document.getElementById("all");
-    const design = document.getElementById("design");
-    const dev = document.getElementById("dev");
+    // Get the button element
+    let icon = document.getElementById('darkModeToggle');
+    let startProjectBtn = document.getElementById('startProjectBtn');
+    let moveRightLoader = document.getElementById('moveRightLoader');
+    let workBtn = document.getElementById('workBtn');
+    let all = document.getElementById("all");
+    let design = document.getElementById("design");
+    let dev = document.getElementById("dev");
 
     // Check if dark mode is active
-    const isDarkMode = document.body.classList.contains('dark-mode');
+    let isDarkMode = document.body.classList.contains('dark-mode');
 
     // Update button background color based on dark mode state
     if (isDarkMode) {
@@ -49,6 +49,8 @@ function toggleDarkMode() {
         design.style.color = 'white';
         dev.style.backgroundColor = 'rgb(15 23 42)';
         dev.style.color = 'white';
+        scrollUp.style.backgroundColor = 'white';
+        scrollUp.style.color = 'black';
     } else {
         icon.style.transform = 'rotate(180deg)';
         startProjectBtn.style.backgroundColor = '#1f2937'; // Original dark mode background color
@@ -62,10 +64,12 @@ function toggleDarkMode() {
         design.style.color = 'black';
         dev.style.backgroundColor = 'white';
         dev.style.color = 'black';
+        scrollUp.style.backgroundColor = 'rgb(15 23 42)';
+        scrollUp.style.color = 'white';
     }
 }
 
-const lis = document.querySelectorAll('.li');
+let lis = document.querySelectorAll('.li');
 
 // Add click event listener to each li
 lis.forEach(li => {
@@ -79,6 +83,22 @@ lis.forEach(li => {
         li.style.border = "1px solid rgb(51 65 85)"; 
         li.style.borderRadius = "9999px"; 
     });
+});
+
+let scrollUp = document.getElementById('scrollUp');
+
+window.addEventListener('scroll', function() {
+    // Get the vertical scroll position
+    let scrollPosition = window.scrollY;
+
+    // Check if the scroll position is greater than a certain threshold
+    if (scrollPosition > 500) {
+        // If so, move the element to the bottom with a negative offset
+        scrollUp.style.bottom = '0px';
+    } else {
+        // If not, reset the element's position
+        scrollUp.style.bottom = '-100px'; 
+    }
 });
 
 function handleScroll() {
@@ -114,16 +134,16 @@ function formAppear () {
 
 function allProject () {
     // Check if dark mode is active
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    
-    const project1 = document.getElementById("project1");
-    const project2 = document.getElementById("project2");
-    const project3 = document.getElementById("project3");
-    const project4 = document.getElementById("project4");
-    const project5 = document.getElementById("project5");
-    const all = document.getElementById("all");
-    const design = document.getElementById("design");
-    const dev = document.getElementById("dev");
+    let isDarkMode = document.body.classList.contains('dark-mode');
+
+    let project1 = document.getElementById("project1");
+    let project2 = document.getElementById("project2");
+    let project3 = document.getElementById("project3");
+    let project4 = document.getElementById("project4");
+    let project5 = document.getElementById("project5");
+    let all = document.getElementById("all");
+    let design = document.getElementById("design");
+    let dev = document.getElementById("dev");
 
     project1.style.display = "block";
     project2.style.display = "block";
@@ -150,16 +170,16 @@ function allProject () {
 
 function design () {
     // Check if dark mode is active
-    const isDarkMode = document.body.classList.contains('dark-mode');
+    let isDarkMode = document.body.classList.contains('dark-mode');
 
-    const project1 = document.getElementById("project1");
-    const project2 = document.getElementById("project2");
-    const project3 = document.getElementById("project3");
-    const project4 = document.getElementById("project4");
-    const project5 = document.getElementById("project5");
-    const all = document.getElementById("all");
-    const design = document.getElementById("design");
-    const dev = document.getElementById("dev");
+    let project1 = document.getElementById("project1");
+    let project2 = document.getElementById("project2");
+    let project3 = document.getElementById("project3");
+    let project4 = document.getElementById("project4");
+    let project5 = document.getElementById("project5");
+    let all = document.getElementById("all");
+    let design = document.getElementById("design");
+    let dev = document.getElementById("dev");
 
     project1.style.display = "block";
     project2.style.display = "none";
@@ -186,16 +206,16 @@ function design () {
 
 function development () {
     // Check if dark mode is active
-    const isDarkMode = document.body.classList.contains('dark-mode');
+    let isDarkMode = document.body.classList.contains('dark-mode');
 
-    const project1 = document.getElementById("project1");
-    const project2 = document.getElementById("project2");
-    const project3 = document.getElementById("project3");
-    const project4 = document.getElementById("project4");
-    const project5 = document.getElementById("project5");
-    const all = document.getElementById("all");
-    const design = document.getElementById("design");
-    const dev = document.getElementById("dev");
+    let project1 = document.getElementById("project1");
+    let project2 = document.getElementById("project2");
+    let project3 = document.getElementById("project3");
+    let project4 = document.getElementById("project4");
+    let project5 = document.getElementById("project5");
+    let all = document.getElementById("all");
+    let design = document.getElementById("design");
+    let dev = document.getElementById("dev");
 
     project1.style.display = "none";
     project2.style.display = "block";
