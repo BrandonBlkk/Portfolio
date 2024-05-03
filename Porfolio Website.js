@@ -239,6 +239,13 @@ function development () {
         dev.style.color = "white";
     }
 }
+//Get fullyear
+const getFullYear = document.getElementById('getFullYear');
+
+document.addEventListener('DOMContentLoaded', () => {
+    const getYear = new Date;
+    getFullYear.textContent = getYear.getFullYear();
+})
 
 
 
