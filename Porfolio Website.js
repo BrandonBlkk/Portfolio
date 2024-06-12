@@ -19,6 +19,14 @@ let typed = new Typed((".skills"), {
     loop : true
 })
 
+//Age Generator
+const currentAge = document.getElementById('currentAge');
+
+document.addEventListener('DOMContentLoaded', () => {
+    const getYear = new Date;
+    currentAge.textContent = `${getYear.getFullYear() - 2005}y/o`;
+})
+
 function toggleDarkMode() {
     // Toggle dark mode class on the body
     document.body.classList.toggle('dark-mode');
